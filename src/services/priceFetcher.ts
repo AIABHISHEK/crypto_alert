@@ -16,7 +16,7 @@ function startPriceFetcher() {
     const latestPrice = parseFloat(priceData.c);
     const symbol = 'BTCUSDT'; // Hardcoded for this example
 
-    // Update Redis with the latest price (expires in 60 seconds)
+    // Update Redis with the latest price
     await redis.set(symbol, latestPrice, 'EX', 300);
 
     // Enqueue a job for the Alert Processor
